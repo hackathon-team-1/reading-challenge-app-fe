@@ -39,7 +39,9 @@
               <a class="nav-link" href="#" aria-label="Create">Create</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" aria-label="Challenges">Challenges</a>
+              <a class="nav-link" href="#" aria-label="Challenges">
+                Challenges
+              </a>
             </li>
             <li class="nav-item">
               <a
@@ -57,16 +59,125 @@
               <a class="nav-link" href="#" aria-label="Log In">Log In</a>
             </li>
             <li class="nav-item">
-              <button class="btn btn-outline-success" aria-label="Get Started" type="submit">Get Started</button>
+              <button
+                class="btn btn-outline-success"
+                aria-label="Get Started"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#sign-up-modal"
+              >
+                Get Started
+              </button>
             </li>
-        </ul>
+          </ul>
         </div>
       </div>
     </nav>
 
     <main>
+      <!-- Sign Up Modal -->
+      <div
+        class="modal fade"
+        id="sign-up-modal"
+        tabindex="-1"
+        aria-labelledby="si"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Sign Up!</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <form>
+              <div class="modal-body">
+                <p>
+                  Create an account to keep track of your reading challenges.
+                  Already have an account?
+                  <a href="#">Log in here.</a>
+                </p>
+                <div class="mb-3">
+                  <label for="userNameInput" class="form-label">
+                    User name
+                  </label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="userNameInput"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="emailInput" class="form-label">
+                    Email address
+                  </label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="emailInput"
+                    aria-describedby="emailHelp"
+                  />
+                  <div id="emailHelp" class="form-text">
+                    We'll never share your email with anyone else.
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="passwordInput" class="form-label">Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="passwordInput"
+                    aria-describedby="passwordHelpBlock"
+                  />
+                  <div id="passwordHelpBlock" class="form-text">
+                    Your password must be 8-20 characters long, contain letters
+                    and numbers, and must not contain spaces, special
+                    characters, or emoji.
+                  </div>
+                </div>
+                <div class="input-group mb-3">
+                  <label class="input-group-text" for="inputChallenge">
+                    Challenge
+                  </label>
+                  <select class="form-select" id="challengeInput">
+                    <option selected>Choose a reading challenge...</option>
+                    <option value="1">Book Riot Read Harder 2022</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <div class="mb-3 form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="termsAndConditionsCheck"
+                  />
+                  <label class="form-check-label" for="termsAndConditionsCheck">
+                    Accept Terms & Conditions
+                  </label>
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="submit" class="btn btn-primary">
+                  Get Started!
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
       <!-- dynamically create content here -->
-      
     </main>
     <!-- Bootstrap Bundle with Popper -->
     <script
