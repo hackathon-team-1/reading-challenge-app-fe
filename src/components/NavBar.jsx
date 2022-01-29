@@ -1,5 +1,6 @@
 import React from 'react';
 import {Container, Navbar, Nav} from 'react-bootstrap';
+import { RegistrationModal } from './RegistrationModal';
 
 const NavBar = () => {
   return (
@@ -15,6 +16,7 @@ const NavBar = () => {
           </Nav>
           <Nav className="me-1" id="login-nav">
             <Nav.Link href="#log-in">Log In</Nav.Link>
+            <RegistrationModal />
           </Nav>
         </Navbar.Collapse>
       </Container>
