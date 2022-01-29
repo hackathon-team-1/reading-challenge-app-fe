@@ -1,9 +1,13 @@
 import './App.css';
 import NavBar from './components/NavBar';
+import { UserChallengePage } from './components/UserChallengePage';
 
 function App() {
   return (
-    <NavBar />
+    <>
+      <NavBar />
+      <UserChallengePage />
+    </>
   );
 }
 
