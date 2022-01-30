@@ -1,4 +1,3 @@
-import { trueFunc } from "boolbase";
 import {React, useState} from "react";
 import { Card, Form, InputGroup, FormControl, Button } from "react-bootstrap";
 
