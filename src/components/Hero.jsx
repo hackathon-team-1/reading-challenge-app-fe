@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import './Hero.css';
 
 const Hero = () => {
   return (<Container>
