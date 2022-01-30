@@ -1,13 +1,21 @@
 import React from "react";
 import { ProgressBar } from "react-bootstrap";
 
-const ChallengeProgressBar = (props) => {
-  const { challengeTasks } = props;
-  const blockSize = 100 / challengeTasks.length;
-  let isCompleted = true;
+const ChallengeProgressBar = ({userProgress}) => {
+
+  const blockSize = 100 / userProgress.length;
+ 
   return (
     <ProgressBar>
-      { challengeTasks.map((task, key) =>   (<ProgressBar variant={isCompleted ? "success" : "secondary"} now={blockSize} key={"progress"+key} href="#" />
+      {userProgress.map((task, index) => (
+        <ProgressBar
+          variant={
+            task.isComplete ? "success" : "secondary"
+          }
+          now={blockSize}
+          key={"progress" + index}
+          href="#"
+        />
       ))}
     </ProgressBar>
   );
@@ -16,9 +24,6 @@ const ChallengeProgressBar = (props) => {
 export default ChallengeProgressBar;
 
 // TO DO:
-// Take props from the parent component - array representing each challenge task
-// Iterate over array to dynamically generate progress bars
-// Each progress bar show green if the challenge has been completed, grey if not.
 // Each progress bar link to the relevant challenge task.
 
 // Styling

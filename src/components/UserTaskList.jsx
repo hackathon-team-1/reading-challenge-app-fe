@@ -2,16 +2,23 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import ChallengeTaskBox from "./ChallengeTaskBox";
 
-const UserTaskList = (props) => {
-  let challengeTasks = [...props.challengeTasks];
-  
-
+const UserTaskList = ({
+  userProgress,
+  updateUserProgress,
+}) => {
   return (
     <Container>
       <br />
-      {challengeTasks.map((task, key) => (
+      {userProgress.map((task) => (
         <>
-          <ChallengeTaskBox task={task} key={key} />
+          <ChallengeTaskBox
+            bookInput={task.bookInput}
+            task={task.taskName}
+            taskId={task.taskId}
+            key={task.taskId}
+            isComplete={task.isComplete}
+            updateUserProgress={updateUserProgress}
+          />
           <br />
         </>
       ))}
