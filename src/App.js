@@ -1,12 +1,14 @@
-import './App.css';
-import NavBar from './components/NavBar';
-import { UserChallengePage } from './components/UserChallengePage';
+import "./App.css";
+import NavBar from "./components/NavBar";
+import Home from "./components/Home";
+import { UserChallengePage } from "./components/UserChallengePage";
 
 function App() {
+  let loggedIn = false;
   return (
     <>
       <NavBar />
-      <UserChallengePage />
+      {loggedIn? <UserChallengePage /> : <Home />}
     </>
   );
 }
