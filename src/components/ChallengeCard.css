@@ -1,0 +1,5 @@
+.ChallengeCard {
+  margin: auto;
+  display: inline-flex;
+  flex-wrap: wrap;
+}
