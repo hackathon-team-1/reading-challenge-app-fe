@@ -2,6 +2,7 @@ import React from 'react';
 import {Container, Navbar, Nav} from 'react-bootstrap';
 import { RegistrationModal } from './RegistrationModal';
 import { LoginModal } from './LoginModal';
+import './NavBar.css'
 
 const NavBar = () => {
   return (
