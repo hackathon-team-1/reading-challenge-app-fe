@@ -1,4 +1,5 @@
 import {React, useState} from "react";
+// import { useNavigate } from "react-router-dom"
 import { Button, Modal, Form} from "react-bootstrap";
 
 export const RegistrationModal = () => {
@@ -8,13 +9,68 @@ export const RegistrationModal = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+
+  // ----------------signup logic ---------------
+
+  const [userInfo, setUser] = useState({
+    username:"",
+    email: "",
+    password: ""
+  });
+
+  const handleChange = (e) => {
+    let { id, value } = e.target;
+
+    if (id === "validationName") {
+      setUser((prev) => {
+      return { ...prev, username: value };
+      });
+      } 
+      
+    else if (id === "validatePassword") {
+      setUser((prev) => {
+      return {...prev, password: value };
+      });
+      } 
+      
+    else if (id === "validationEmail") {
+        setUser((prev) => {
+          return {...prev, email: value };
+        });
+      }
+  };
+
+  const postData = async() => {
+    setUser(userInfo)
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}users/`, 
+      {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify(userInfo)
+      }
+    );
+    
+    return response.json();
+  }
+
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
     }
-
+    else {
+      event.preventDefault();
+      postData()
+            .then((response) => {
+                console.log('------response from my API --------', response)
+                // navigate("/");
+            })
+    };
     setValidated(true);
   };
   return (
@@ -39,13 +95,18 @@ export const RegistrationModal = () => {
                 required
                 type="text"
                 placeholder="Enter user name"
-                defaultValue=""
+                onChange={handleChange}
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
             <Form.Group className="mb-3" controlId="validationEmail">
               <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" required />
+              <Form.Control 
+              type="email"
+              placeholder="Enter email" 
+              required 
+              onChange={handleChange}
+              />
               <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
               </Form.Text>
@@ -57,6 +118,7 @@ export const RegistrationModal = () => {
                 placeholder="Enter password"
                 required
                 aria-describedby="passwordHelpBlock"
+                onChange={handleChange}
               />
               <Form.Text id="passwordHelpBlock" muted>
                 Your password must be 8-20 characters long, contain letters and
@@ -64,7 +126,7 @@ export const RegistrationModal = () => {
                 emoji.
               </Form.Text>
             </Form.Group>
-            <Form.Group>
+            {/* <Form.Group>
               <Form.Label>Challenge</Form.Label>
               <Form.Select aria-label="Join a challenge">
                 <option>Join a challenge</option>
@@ -72,7 +134,7 @@ export const RegistrationModal = () => {
                 <option value="2">Two</option>
                 <option value="3">Three</option>
               </Form.Select>
-            </Form.Group>
+            </Form.Group> */}
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
