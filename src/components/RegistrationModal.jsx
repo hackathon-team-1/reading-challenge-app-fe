@@ -19,11 +19,16 @@ export const RegistrationModal = () => {
 
   const handleChange = (e) => {
     let { id, value } = e.target;
-    setUser((prevUser) => ({
-      ...prevUser,
-      [id]: value,
-    }));
-  };
+    if (id === "validationName") {
+      setUser((prev) => {
+      return { ...prev, username: value };
+      });
+      } else if (id === "validatePassword") {
+      setUser((prev) => {
+      return { ...prev, password: value };
+      });
+      }
+      };
 
   const postData = () => {
     return fetch(
