@@ -14,33 +14,48 @@ export const RegistrationModal = () => {
 
   const [userInfo, setUser] = useState({
     username:"",
+    email: "",
     password: ""
   });
 
   const handleChange = (e) => {
     let { id, value } = e.target;
+
     if (id === "validationName") {
       setUser((prev) => {
       return { ...prev, username: value };
       });
-      } else if (id === "validatePassword") {
+      } 
+      
+    else if (id === "validatePassword") {
       setUser((prev) => {
-      return { ...prev, password: value };
+      return {...prev, password: value };
       });
+      } 
+      
+    else if (id === "validationEmail") {
+        setUser((prev) => {
+          return {...prev, email: value };
+        });
       }
-      };
-
-  const postData = () => {
-    return fetch(
-      `${process.env.REACT_APP_API_URL}users/`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(userInfo),
-      }).then(i => i.json());
   };
+
+  const postData = async() => {
+    setUser(userInfo)
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}users/`, 
+      {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify(userInfo)
+      }
+    );
+    
+    return response.json();
+  }
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
