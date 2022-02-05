@@ -70,6 +70,7 @@ export const RegistrationModal = () => {
                 console.log('------response from my API --------', response)
                 // navigate("/");
             })
+            handleClose();
     };
     setValidated(true);
   };
