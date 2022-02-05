@@ -1,5 +1,6 @@
 import {React, useState} from "react";
 import { Button, Modal, Form} from "react-bootstrap";
+// import { useNavigate  } from "react-router-dom";
 
 export const LoginModal = () => {
   const [credentials, setCredentials] = useState({
@@ -7,10 +8,11 @@ export const LoginModal = () => {
     password: "",
   });
   const [show, setShow] = useState(false);
-  const [validated, setValidated] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  // const [navigate, setNavigate] = useNavigate()
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -33,14 +35,15 @@ const postData = async () => {
   return response.json();
 };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
       if (credentials.username && credentials.password) {
           postData().then((response) => {
               window.localStorage.setItem("token", response.token);
               window.location = window.location.origin;
           });
       }
-    setValidated(true);
+      handleClose();
   };
   return (
     <>
@@ -49,13 +52,14 @@ const postData = async () => {
       </Button>
 
       <Modal show={show} onHide={handleClose} centered>
-      <Form noValidate validated={validated} onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
           <Modal.Header closeButton>
             <Modal.Title>Login</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <p>
               Enter your account details to keep track of your reading challenges.
+              {/* -----------------use router to redirect to RegistrationModal.jsx */}
               No account yet? <a href="# ">Sign up here!</a>
             </p>
             <Form.Group controlId="validationName">
