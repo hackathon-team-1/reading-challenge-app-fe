@@ -6,15 +6,16 @@ import './NavBar.css'
 
 const NavBar = () => {
   return (
-    <Navbar bg="light" expand="lg" sticky="top">
+    <Navbar expand="lg" sticky="top">
       <Container>
         <Navbar.Brand href="#home">Reading Book Challenge</Navbar.Brand>
         <Navbar.Toggle aria-controls="navigation-bar" />
         <Navbar.Collapse id="navigation-bar">
           <Nav className="mx-auto" id="centre-nav">
+            {/* ---------------------- hidden links for future implementation --------------------- */}
             {/* <Nav.Link href="#create">Create</Nav.Link> */}
             {/* <Nav.Link href="#challenges">Challenges</Nav.Link> */}
-            <Nav.Link href="#faq">FAQ</Nav.Link>
+            {/* <Nav.Link href="#faq">FAQ</Nav.Link> */}
           </Nav>
           <Nav className="me-1" id="login-nav">
             <LoginModal />

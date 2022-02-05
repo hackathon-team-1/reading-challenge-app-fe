@@ -2,6 +2,8 @@ import {React, useState} from "react";
 // import { useNavigate } from "react-router-dom"
 import { Button, Modal, Form} from "react-bootstrap";
 
+import './RegistrationModal.css'
+
 export const RegistrationModal = () => {
   const [show, setShow] = useState(false);
   const [validated, setValidated] = useState(false);
@@ -76,7 +78,7 @@ export const RegistrationModal = () => {
   };
   return (
     <>
-      <Button variant="success" onClick={handleShow}>
+      <Button variant="light" onClick={handleShow}>
         Get Started
       </Button>
 
@@ -88,6 +90,7 @@ export const RegistrationModal = () => {
           <Modal.Body>
             <p>
               Create an account to keep track of your reading challenges.
+              {/* ---------------------use router to navigate to LoginModal.jsx----------- */}
               Already have an account? <a href="# ">Log in here!</a>
             </p>
             <Form.Group controlId="validationName">
