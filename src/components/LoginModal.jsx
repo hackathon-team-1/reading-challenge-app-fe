@@ -1,9 +1,9 @@
 import  React, { useState } from "react";
 import { Button, Modal, Form} from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 export const LoginModal = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const [credentials, setCredentials] = useState({
     username: "",
@@ -41,7 +41,7 @@ const doLogin = (e) => {
   if (credentials.username && credentials.password) {
       postData().then((response) => {
           window.localStorage.setItem("token", response.token);
-          navigate("reading-challenge-app-fe/user-challenge");
+          // navigate("reading-challenge-app-fe/user-challenge");
           window.location.reload(true)
       });
   }
@@ -62,7 +62,7 @@ const doLogin = (e) => {
             <p>
               Enter your account details to keep track of your reading challenges.
               {/* -----------------use router to redirect to RegistrationModal.jsx */}
-              No account yet? <a href="# ">Sign up here!</a>
+              {/* No account yet? <a href="# ">Sign up here!</a> */}
             </p>
             <Form.Group>
               <Form.Label>Username</Form.Label>

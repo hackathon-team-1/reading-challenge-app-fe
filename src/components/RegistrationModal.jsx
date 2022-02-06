@@ -88,7 +88,7 @@ export const RegistrationModal = () => {
             <p>
               Create an account to keep track of your reading challenges.
               {/* ---------------------use router to navigate to LoginModal.jsx----------- */}
-              Already have an account? <a href="# ">Log in here!</a>
+              {/* Already have an account? <a href="# ">Log in here!</a> */}
             </p>
             <Form.Group controlId="validationName">
               <Form.Label>Username</Form.Label>
@@ -127,7 +127,7 @@ export const RegistrationModal = () => {
                 emoji.
               </Form.Text>
             </Form.Group>
-            <Form.Group>
+            {/* <Form.Group>
               <Form.Label>Challenge</Form.Label>
               <Form.Select aria-label="Join a challenge">
                 <option>Join a challenge</option>
@@ -135,7 +135,7 @@ export const RegistrationModal = () => {
                 <option value="2">Option Two <em>(Coming soon!)</em></option>
                 <option value="3">Option Three <em>(Coming soon!)</em></option>
               </Form.Select>
-            </Form.Group>
+            </Form.Group> */}
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>

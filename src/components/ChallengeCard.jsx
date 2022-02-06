@@ -3,6 +3,18 @@ import { Card, Button } from "react-bootstrap";
 import "./ChallengeCard.css";
 
 const ChallengeCard = ({challengeName, challengeImg, deadline, description, is_active, registered, link, }) => {
+
+  const displayButtons = (status) => {
+    if (is_active === true && localStorage.getItem("token") !== "null") {
+      return <Button variant="primary">Join Challenge!</Button>
+    }
+    if (is_active === false && localStorage.getItem("token") !== "null") {
+      return <Button variant="secondary" disabled >Coming Soon!</Button>
+    }
+    if (localStorage.getItem("token") === "null") {
+      return <Button variant="secondary" disabled >Login to join!</Button>
+    }
+  }
   return (
     <>
       <Card style={{ width: "20rem" }} className="shadow p-2 mb-4 m-2" >
@@ -13,9 +25,7 @@ const ChallengeCard = ({challengeName, challengeImg, deadline, description, is_a
           <Card.Text>{description}</Card.Text>
           <div>
             {
-            is_active === true
-            ? <Button variant="primary">Join Challenge!</Button>
-            : <Button variant="secondary">Coming Soon!</Button>
+          displayButtons()
           }
           </div>
         </Card.Body>
