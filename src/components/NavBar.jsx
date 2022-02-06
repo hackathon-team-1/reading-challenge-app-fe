@@ -14,10 +14,14 @@ const NavBar = () => {
     navigate('/')
     setToken(null)
   }
+
+  const goHome = () => {
+    navigate('/')
+  }
     return (
     <Navbar expand="lg" sticky="top">
       <Container>
-        <Navbar.Brand href="#home">Reading Book Challenge</Navbar.Brand>
+        <Navbar.Brand onClick={goHome}>Reading Book Challenge</Navbar.Brand>
         <Navbar.Toggle aria-controls="navigation-bar" />
         <Navbar.Collapse id="navigation-bar">
           <Nav className="mx-auto" id="centre-nav">

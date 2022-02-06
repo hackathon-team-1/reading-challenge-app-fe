@@ -1,3 +1,7 @@
 nav {
     background-color: lightskyblue;
 }
+
+.navbar-brand {
+    cursor:pointer;
+}
