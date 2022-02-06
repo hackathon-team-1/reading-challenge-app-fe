@@ -4,7 +4,7 @@ import Home from "./components/Home";
 import { UserChallengePage } from "./components/UserChallengePage";
 
 function App() {
-  let loggedIn = false;
+  let loggedIn = true;
   return (
     <>
       <NavBar />
