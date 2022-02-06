@@ -41,7 +41,7 @@ const doLogin = (e) => {
   if (credentials.username && credentials.password) {
       postData().then((response) => {
           window.localStorage.setItem("token", response.token);
-          navigate("/user-challenge");
+          navigate("reading-challenge-app-fe/user-challenge");
           window.location.reload(true)
       });
   }
