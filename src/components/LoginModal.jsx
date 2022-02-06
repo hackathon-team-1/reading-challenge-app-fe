@@ -1,4 +1,4 @@
-import {React, useState} from "react";
+import  React, { useState } from "react";
 import { Button, Modal, Form} from "react-bootstrap";
 // import { useNavigate  } from "react-router-dom";
 
@@ -12,8 +12,6 @@ export const LoginModal = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  // const [navigate, setNavigate] = useNavigate()
-
   const handleChange = (e) => {
     const { id, value } = e.target;
     setCredentials((prevCredentials) => ({
@@ -21,6 +19,7 @@ export const LoginModal = () => {
         [id]: value,
     }));
 };
+
 const postData = async () => {
   const response = await fetch(
       `${process.env.REACT_APP_API_URL}api-token-auth/`,
@@ -32,6 +31,7 @@ const postData = async () => {
       body: JSON.stringify(credentials),
   }
   );
+  console.log("login form POST response object: ", response);
   return response.json();
 };
 
@@ -62,19 +62,21 @@ const postData = async () => {
               {/* -----------------use router to redirect to RegistrationModal.jsx */}
               No account yet? <a href="# ">Sign up here!</a>
             </p>
-            <Form.Group controlId="validationName">
+            <Form.Group>
               <Form.Label>Username</Form.Label>
               <Form.Control
                 required
+                id= "username"
                 type="text"
                 placeholder="Enter user name"
                 defaultValue=""
                 onChange={handleChange}
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="validatePassword">
+            <Form.Group className="mb-3">
               <Form.Label>Password</Form.Label>
               <Form.Control
+              id="password"
                 type="password"
                 placeholder="Enter password"
                 required
@@ -93,3 +95,4 @@ const postData = async () => {
     </>
   );
 };
+export default LoginModal;
