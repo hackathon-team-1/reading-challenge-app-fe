@@ -127,15 +127,19 @@ export const RegistrationModal = () => {
                 emoji.
               </Form.Text>
             </Form.Group>
-            {/* <Form.Group>
+            <Form.Group>
               <Form.Label>Challenge</Form.Label>
               <Form.Select aria-label="Join a challenge">
-                <option>Join a challenge</option>
+                <option disabled>Join a challenge</option>
                 <option value="1">Book Riot Read Harder 2022</option>
-                <option value="2">Option Two <em>(Coming soon!)</em></option>
-                <option value="3">Option Three <em>(Coming soon!)</em></option>
+                <option disabled value="2">The 52 Book Club (Coming soon!)</option>
+                <option disabled value="3">Fairytale Reading Challenge (Coming soon!)</option>
+                <option disabled value="4">Popsugar Reading Challenge (Coming soon!)</option>
+                <option disabled value="5">Read Around the World 2022 (Coming soon!)</option>
+
+
               </Form.Select>
-            </Form.Group> */}
+            </Form.Group>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
