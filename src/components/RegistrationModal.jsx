@@ -132,8 +132,8 @@ export const RegistrationModal = () => {
               <Form.Select aria-label="Join a challenge">
                 <option>Join a challenge</option>
                 <option value="1">Book Riot Read Harder 2022</option>
-                <option value="2">Option Two</option>
-                <option value="3">Option Three</option>
+                <option value="2">Option Two <em>(Coming soon!)</em></option>
+                <option value="3">Option Three <em>(Coming soon!)</em></option>
               </Form.Select>
             </Form.Group>
           </Modal.Body>
