@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/reading-challenge-app-fe/static/css/main.74ca97ce.css",
-    "main.js": "/reading-challenge-app-fe/static/js/main.60ce0bdb.js",
+    "main.css": "/reading-challenge-app-fe/static/css/main.2e1c5cc1.css",
+    "main.js": "/reading-challenge-app-fe/static/js/main.5ad5df99.js",
     "static/js/787.a1661c63.chunk.js": "/reading-challenge-app-fe/static/js/787.a1661c63.chunk.js",
     "index.html": "/reading-challenge-app-fe/index.html",
-    "main.74ca97ce.css.map": "/reading-challenge-app-fe/static/css/main.74ca97ce.css.map",
-    "main.60ce0bdb.js.map": "/reading-challenge-app-fe/static/js/main.60ce0bdb.js.map",
+    "main.2e1c5cc1.css.map": "/reading-challenge-app-fe/static/css/main.2e1c5cc1.css.map",
+    "main.5ad5df99.js.map": "/reading-challenge-app-fe/static/js/main.5ad5df99.js.map",
     "787.a1661c63.chunk.js.map": "/reading-challenge-app-fe/static/js/787.a1661c63.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.74ca97ce.css",
-    "static/js/main.60ce0bdb.js"
+    "static/css/main.2e1c5cc1.css",
+    "static/js/main.5ad5df99.js"
   ]
 }
