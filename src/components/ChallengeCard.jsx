@@ -6,7 +6,7 @@ import "./ChallengeCard.css";
 const ChallengeCard = ({challengeName, challengeImg, deadline, description, is_active, joined, registered, link, }) => {
   const navigate = useNavigate()
   const viewChallenge = () => {
-    navigate("reading-challenge-app-fe/user-challenge")
+    navigate("/user-challenge")
   }
 
   const displayButtons = () => {

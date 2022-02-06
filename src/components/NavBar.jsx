@@ -16,7 +16,7 @@ const NavBar = () => {
   }
 
   const goHome = () => {
-    navigate('/')
+    navigate('reading-challenge-app-fe/')
   }
     return (
     <Navbar expand="lg" sticky="top">
