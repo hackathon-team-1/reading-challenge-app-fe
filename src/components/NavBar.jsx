@@ -1,11 +1,20 @@
-import React from 'react';
-import {Container, Navbar, Nav} from 'react-bootstrap';
+import { React, useState } from 'react';
+import { Container, Navbar, Nav, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import { RegistrationModal } from './RegistrationModal';
 import { LoginModal } from './LoginModal';
 import './NavBar.css'
 
 const NavBar = () => {
-  return (
+  const navigate = useNavigate();
+  const [token, setToken] = useState(localStorage.getItem('token'))
+
+  const logout = () => {
+    localStorage.setItem('token', null)
+    navigate('/')
+    setToken(null)
+  }
+    return (
     <Navbar expand="lg" sticky="top">
       <Container>
         <Navbar.Brand href="#home">Reading Book Challenge</Navbar.Brand>
@@ -18,8 +27,18 @@ const NavBar = () => {
             {/* <Nav.Link href="#faq">FAQ</Nav.Link> */}
           </Nav>
           <Nav className="me-1" id="login-nav">
-            <LoginModal />
-            <RegistrationModal />
+          {
+            ! token || token === "null"
+            ? <div>
+              <LoginModal />
+              <RegistrationModal />
+            </div>
+            : <div>
+              <Button variant="dark" onClick={logout}>
+                Logout
+              </Button>
+            </div>
+          }
           </Nav>
         </Navbar.Collapse>
       </Container>

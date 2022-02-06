@@ -1,7 +1,6 @@
 import {React, useState} from "react";
-// import { useNavigate } from "react-router-dom"
-import { Button, Modal, Form} from "react-bootstrap";
-
+// import { useNavigate } from "react-router-dom";
+import { Button, Modal, Form } from "react-bootstrap";
 import './RegistrationModal.css'
 
 export const RegistrationModal = () => {
@@ -10,7 +9,6 @@ export const RegistrationModal = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
 
   // ----------------signup logic ---------------
 
@@ -70,15 +68,14 @@ export const RegistrationModal = () => {
       postData()
             .then((response) => {
                 console.log('------response from my API --------', response)
-                // navigate("/");
             })
             handleClose();
     };
-    setValidated(true);
+    setValidated(true);    
   };
   return (
     <>
-      <Button variant="light" onClick={handleShow}>
+      <Button variant="success" onClick={handleShow}>
         Get Started
       </Button>
 
