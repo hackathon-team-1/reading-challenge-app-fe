@@ -2,8 +2,8 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
-import { LoginModal } from "./components/LoginModal";
-import { RegistrationModal } from "./components/RegistrationModal";
+// import { LoginModal } from "./components/LoginModal";
+// import { RegistrationModal } from "./components/RegistrationModal";
 import { UserChallengePage } from "./components/UserChallengePage";
 
 const App = () => {
@@ -12,11 +12,10 @@ const App = () => {
         <div>
         <NavBar/>
         <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/home" element={<Home/>} />
-          <Route path="/login" element={<LoginModal/>}/>
-          <Route path="/signup" element={<RegistrationModal/>} />
+          <Route path="" element={<Home/>} />
+          <Route path="reading-challenge-app-fe/" element={<Home/>} />
           <Route path="reading-challenge-app-fe/user-challenge" element={<UserChallengePage/>}/>
+
         </Routes>
         </div>
       </Router>
