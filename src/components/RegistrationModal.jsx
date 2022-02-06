@@ -127,15 +127,15 @@ export const RegistrationModal = () => {
                 emoji.
               </Form.Text>
             </Form.Group>
-            {/* <Form.Group>
+            <Form.Group>
               <Form.Label>Challenge</Form.Label>
               <Form.Select aria-label="Join a challenge">
                 <option>Join a challenge</option>
                 <option value="1">Book Riot Read Harder 2022</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option value="2">Option Two</option>
+                <option value="3">Option Three</option>
               </Form.Select>
-            </Form.Group> */}
+            </Form.Group>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>

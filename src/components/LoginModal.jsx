@@ -1,8 +1,10 @@
 import  React, { useState } from "react";
 import { Button, Modal, Form} from "react-bootstrap";
-// import { useNavigate  } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const LoginModal = () => {
+  const navigate = useNavigate();
+
   const [credentials, setCredentials] = useState({
     username: "",
     password: "",
@@ -31,20 +33,20 @@ const postData = async () => {
       body: JSON.stringify(credentials),
   }
   );
-  console.log("login form POST response object: ", response);
   return response.json();
 };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-      if (credentials.username && credentials.password) {
-          postData().then((response) => {
-              window.localStorage.setItem("token", response.token);
-              window.location = window.location.origin;
-          });
-      }
-      handleClose();
-  };
+const doLogin = (e) => {
+  e.preventDefault();
+  if (credentials.username && credentials.password) {
+      postData().then((response) => {
+          window.localStorage.setItem("token", response.token);
+          navigate("/user-challenge");
+          window.location.reload(true)
+      });
+  }
+  handleClose();
+}
   return (
     <>
       <Button variant="light" onClick={handleShow}>
@@ -52,7 +54,7 @@ const postData = async () => {
       </Button>
 
       <Modal show={show} onHide={handleClose} centered>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={doLogin}>
           <Modal.Header closeButton>
             <Modal.Title>Login</Modal.Title>
           </Modal.Header>
@@ -86,7 +88,7 @@ const postData = async () => {
             </Form.Group>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="success" type="submit" onClick={handleSubmit}>
+            <Button variant="success" type="submit" onClick={doLogin}>
               Login!
             </Button>
           </Modal.Footer>
