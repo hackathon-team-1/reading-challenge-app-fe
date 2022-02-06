@@ -1,27 +1,29 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
-// import { UserChallengePage } from "./components/UserChallengePage";
-// import { LoginModal } from "./components/LoginModal";
+import { LoginModal } from "./components/LoginModal";
+import { RegistrationModal } from "./components/RegistrationModal";
+import { UserChallengePage } from "./components/UserChallengePage";
 
 const App = () => {
   return (
-    <div>
       <Router>
+        <div>
         <NavBar/>
-        <Home/>
         <Routes>
-          <Route exact path="/" element={<Home/>}/>
-          <Route exact path="/reading-challenge-app-fe/" element={<Home/>}/>
+          <Route path="/" element={<Home/>} />
+          <Route path="/home" element={<Home/>} />
+          <Route path="/login" element={<LoginModal/>}/>
+          <Route path="/signup" element={<RegistrationModal/>} />
+          <Route path="/user-challenge" element={<UserChallengePage/>}/>
         </Routes>
+        </div>
       </Router>
-    </div>
-  )
+  );
 }
 
-export default App
+export default App;
 
 
 
