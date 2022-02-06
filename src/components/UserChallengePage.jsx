@@ -10,7 +10,7 @@ export const UserChallengePage = () => {
     return {
       taskName: task,
       taskId: `task${index}`,
-      bookInput: "",
+      bookInput: {title: "", authors: "", thumbnail: ""},
       isComplete: false,
     };
   });

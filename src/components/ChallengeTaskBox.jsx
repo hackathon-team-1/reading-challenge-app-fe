@@ -47,7 +47,7 @@ useEffect(() => {
   const handleSubmit = (e) => {
     e.preventDefault();
     isComplete = !isComplete;
-    updateUserProgress(task, taskId, book, isComplete);
+    updateUserProgress(task, taskId, bookSearch[0], isComplete);
     setInput("");
     isComplete ? setEditMode(false) : setEditMode(true);
   };
@@ -58,7 +58,8 @@ useEffect(() => {
         <Card border="secondary" variant="outline-success">
           <Card.Header>{task}</Card.Header>
           <Card.Body>
-            <Card.Text>{bookInput}</Card.Text>
+          <Card.Img variant="left" src={bookInput.thumbnail} />
+            <Card.Text>{bookInput.title} by {bookInput.authors[0]}</Card.Text>
             <Button
               variant="outline-success"
               id={"btn-task-" + taskId}
@@ -79,11 +80,12 @@ useEffect(() => {
             <Form onSubmit={(e) => handleSubmit(e)}>
               <InputGroup>
               <FormControl
-                placeholder={bookInput || "Add a book to complete this challenge task"}
+                placeholder={bookInput.title || "Add a book to complete this challenge task"}
                 aria-label="Add a book to complete this challenge task"
                 aria-describedby="task-input-box"
                 type="text"
                 onChange={(e) => setInput(e.target.value)}
+
               />
               <Button
                 variant="outline-success"
