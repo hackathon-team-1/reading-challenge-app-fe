@@ -55,13 +55,15 @@ useEffect(() => {
   if (isComplete && editMode === false) {
     return (
       <>
-        <Card border="secondary" variant="outline-success">
-          <Card.Header>{task}</Card.Header>
+        <Card border="success" text="success">
+          <Card.Header>COMPLETED: {task}</Card.Header>
           <Card.Body>
-          <Card.Img variant="left" src={bookInput.thumbnail} />
-            <Card.Text>{bookInput.title} by {bookInput.authors[0]}</Card.Text>
+            <Card.Img variant="left" src={bookInput.thumbnail} />
+            <Card.Text>
+              {bookInput.title} by {bookInput.authors[0]}
+            </Card.Text>
             <Button
-              variant="outline-success"
+              variant="outline-secondary"
               id={"btn-task-" + taskId}
               onClick={() => setEditMode(true)}
             >
