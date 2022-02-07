@@ -7,7 +7,7 @@ const Home = () => {
   return <Container>
   <Hero />
   <ChallengeList />
-       
+  
   </Container>;
 };
 

@@ -1,8 +1,10 @@
-import {React, useState} from "react";
+import  React, { useState } from "react";
 import { Button, Modal, Form} from "react-bootstrap";
-// import { useNavigate  } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 export const LoginModal = () => {
+  // const navigate = useNavigate();
+
   const [credentials, setCredentials] = useState({
     username: "",
     password: "",
@@ -12,8 +14,6 @@ export const LoginModal = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  // const [navigate, setNavigate] = useNavigate()
-
   const handleChange = (e) => {
     const { id, value } = e.target;
     setCredentials((prevCredentials) => ({
@@ -21,6 +21,7 @@ export const LoginModal = () => {
         [id]: value,
     }));
 };
+
 const postData = async () => {
   const response = await fetch(
       `${process.env.REACT_APP_API_URL}api-token-auth/`,
@@ -35,16 +36,17 @@ const postData = async () => {
   return response.json();
 };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-      if (credentials.username && credentials.password) {
-          postData().then((response) => {
-              window.localStorage.setItem("token", response.token);
-              window.location = window.location.origin;
-          });
-      }
-      handleClose();
-  };
+const doLogin = (e) => {
+  e.preventDefault();
+  if (credentials.username && credentials.password) {
+      postData().then((response) => {
+          window.localStorage.setItem("token", response.token);
+          // navigate("reading-challenge-app-fe/user-challenge");
+          window.location.reload(true)
+      });
+  }
+  handleClose();
+}
   return (
     <>
       <Button variant="light" onClick={handleShow}>
@@ -52,7 +54,7 @@ const postData = async () => {
       </Button>
 
       <Modal show={show} onHide={handleClose} centered>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={doLogin}>
           <Modal.Header closeButton>
             <Modal.Title>Login</Modal.Title>
           </Modal.Header>
@@ -60,21 +62,23 @@ const postData = async () => {
             <p>
               Enter your account details to keep track of your reading challenges.
               {/* -----------------use router to redirect to RegistrationModal.jsx */}
-              No account yet? <a href="# ">Sign up here!</a>
+              {/* No account yet? <a href="# ">Sign up here!</a> */}
             </p>
-            <Form.Group controlId="validationName">
+            <Form.Group>
               <Form.Label>Username</Form.Label>
               <Form.Control
                 required
+                id= "username"
                 type="text"
                 placeholder="Enter user name"
                 defaultValue=""
                 onChange={handleChange}
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="validatePassword">
+            <Form.Group className="mb-3">
               <Form.Label>Password</Form.Label>
               <Form.Control
+              id="password"
                 type="password"
                 placeholder="Enter password"
                 required
@@ -84,7 +88,7 @@ const postData = async () => {
             </Form.Group>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="success" type="submit" onClick={handleSubmit}>
+            <Button variant="success" type="submit" onClick={doLogin}>
               Login!
             </Button>
           </Modal.Footer>
@@ -93,3 +97,4 @@ const postData = async () => {
     </>
   );
 };
+export default LoginModal;
