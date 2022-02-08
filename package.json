@@ -1,6 +1,5 @@
 {
   "name": "reading-challenge-app-fe",
-  "homepage": "https://hackathon-team-1.github.io/reading-challenge-app-fe/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
