@@ -4,7 +4,7 @@ import ChallengeProgressBar from "./ChallengeProgressBar";
 import UserTaskList from "./UserTaskList";
 import { bookriot } from "../data/bookriot";
 
-export const UserChallengePage = () => {
+const UserChallengePage = () => {
   // State for whole user challenge
   const initialUserProgress = bookriot.map((task, index) => {
     return {
@@ -54,3 +54,5 @@ export const UserChallengePage = () => {
     </Container>
   );
 };
+
+export default UserChallengePage;
