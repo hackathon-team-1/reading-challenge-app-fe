@@ -13,9 +13,7 @@ const App = () => {
         <NavBar/>
         <Routes>
           <Route path="" element={<Home/>} />
-          <Route path="/" element={<Home/>} />
           <Route path="/user-challenge" element={<UserChallengePage/>}/>
-
         </Routes>
         </div>
       </Router>
@@ -23,20 +21,3 @@ const App = () => {
 }
 
 export default App;
-
-
-
-
-
-
-// function App() {
-//   let loggedIn = false;
-//   return (
-//     <>
-//       <NavBar />
-//       {loggedIn? <UserChallengePage /> : <Home />}
-//     </>
-//   );
-// }
-
-// export default App;
