@@ -136,8 +136,6 @@ export const RegistrationModal = () => {
                 <option disabled value="3">Fairytale Reading Challenge (Coming soon!)</option>
                 <option disabled value="4">Popsugar Reading Challenge (Coming soon!)</option>
                 <option disabled value="5">Read Around the World 2022 (Coming soon!)</option>
-
-
               </Form.Select>
             </Form.Group>
           </Modal.Body>

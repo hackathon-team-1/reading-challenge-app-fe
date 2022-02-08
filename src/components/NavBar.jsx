@@ -11,12 +11,12 @@ const NavBar = () => {
 
   const logout = () => {
     localStorage.setItem('token', null)
-    navigate('/')
+    navigate('/reading-challenge-app-fe')
     setToken(null)
   }
 
   const goHome = () => {
-    navigate('reading-challenge-app-fe/')
+    navigate('/reading-challenge-app-fe')
   }
     return (
     <Navbar expand="lg" sticky="top">
