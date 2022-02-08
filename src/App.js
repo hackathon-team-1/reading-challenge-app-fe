@@ -21,20 +21,3 @@ const App = () => {
 }
 
 export default App;
-
-
-
-
-
-
-// function App() {
-//   let loggedIn = false;
-//   return (
-//     <>
-//       <NavBar />
-//       {loggedIn? <UserChallengePage /> : <Home />}
-//     </>
-//   );
-// }
-
-// export default App;
