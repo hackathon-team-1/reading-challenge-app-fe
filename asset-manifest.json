@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/reading-challenge-app-fe/static/css/main.e8b9354d.css",
-    "main.js": "/reading-challenge-app-fe/static/js/main.37e7f669.js",
+    "main.js": "/reading-challenge-app-fe/static/js/main.ca1ccb44.js",
     "static/js/787.a1661c63.chunk.js": "/reading-challenge-app-fe/static/js/787.a1661c63.chunk.js",
     "index.html": "/reading-challenge-app-fe/index.html",
     "main.e8b9354d.css.map": "/reading-challenge-app-fe/static/css/main.e8b9354d.css.map",
-    "main.37e7f669.js.map": "/reading-challenge-app-fe/static/js/main.37e7f669.js.map",
+    "main.ca1ccb44.js.map": "/reading-challenge-app-fe/static/js/main.ca1ccb44.js.map",
     "787.a1661c63.chunk.js.map": "/reading-challenge-app-fe/static/js/787.a1661c63.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e8b9354d.css",
-    "static/js/main.37e7f669.js"
+    "static/js/main.ca1ccb44.js"
   ]
 }
